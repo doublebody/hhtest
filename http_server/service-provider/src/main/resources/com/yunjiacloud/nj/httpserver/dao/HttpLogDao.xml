@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yunjiacloud.nj.httpserver.dao.HttpLogDao">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.yunjiacloud.nj.httpserver.domain.HttpLogDo">
+        <result column="id" property="id"/>
+        <result column="remote_addr" property="remoteAddr"/>
+        <result column="request" property="request"/>
+        <result column="time_local" property="timeLocal"/>
+        <result column="method" property="method"/>
+        <result column="body_bytes_sent" property="bodyBytesSent"/>
+        <result column="body_byte_receive" property="bodyByteReceive"/>
+        <result column="status" property="status"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `id`,
+        `remote_addr`,
+        `request`,
+        `time_local`,
+        `method`,
+        `body_bytes_sent`,
+        `body_byte_receive`,
+        `status`
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO http_log (
+            `id`,
+            `remote_addr`,
+            `request`,
+            `time_local`,
+            `method`,
+            `body_bytes_sent`,
+            `body_byte_receive`,
+            `status`
+        ) VALUES (
+            #{pojo.id},
+            #{pojo.remoteAddr},
+            #{pojo.request},
+            #{pojo.timeLocal},
+            #{pojo.method},
+            #{pojo.bodyBytesSent},
+            #{pojo.bodyByteReceive},
+            #{pojo.status}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO http_log
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id!=null"> `id`,</if>
+            <if test="pojo.remoteAddr!=null"> `remote_addr`,</if>
+            <if test="pojo.request!=null"> `request`,</if>
+            <if test="pojo.timeLocal!=null"> `time_local`,</if>
+            <if test="pojo.method!=null"> `method`,</if>
+            <if test="pojo.bodyBytesSent!=null"> `body_bytes_sent`,</if>
+            <if test="pojo.bodyByteReceive!=null"> `body_byte_receive`,</if>
+            <if test="pojo.status!=null"> `status`,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id!=null">#{pojo.id},</if>
+            <if test="pojo.remoteAddr!=null">#{pojo.remoteAddr},</if>
+            <if test="pojo.request!=null">#{pojo.request},</if>
+            <if test="pojo.timeLocal!=null">#{pojo.timeLocal},</if>
+            <if test="pojo.method!=null">#{pojo.method},</if>
+            <if test="pojo.bodyBytesSent!=null">#{pojo.bodyBytesSent},</if>
+            <if test="pojo.bodyByteReceive!=null">#{pojo.bodyByteReceive},</if>
+            <if test="pojo.status!=null">#{pojo.status},</if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO http_log (
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.id},
+            #{pojo.remoteAddr},
+            #{pojo.request},
+            #{pojo.timeLocal},
+            #{pojo.method},
+            #{pojo.bodyBytesSent},
+            #{pojo.bodyByteReceive},
+            #{pojo.status}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE http_log
+        <set>
+            <if test="pojo.id != null"> `id` = #{pojo.id}, </if>
+            <if test="pojo.remoteAddr != null"> `remote_addr` = #{pojo.remoteAddr}, </if>
+            <if test="pojo.request != null"> `request` = #{pojo.request}, </if>
+            <if test="pojo.timeLocal != null"> `time_local` = #{pojo.timeLocal}, </if>
+            <if test="pojo.method != null"> `method` = #{pojo.method}, </if>
+            <if test="pojo.bodyBytesSent != null"> `body_bytes_sent` = #{pojo.bodyBytesSent}, </if>
+            <if test="pojo.bodyByteReceive != null"> `body_byte_receive` = #{pojo.bodyByteReceive}, </if>
+            <if test="pojo.status != null"> `status` = #{pojo.status} </if>
+        </set>
+        WHERE `id` = #{pojo.id}
+    </update>
+</mapper>
+

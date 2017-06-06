@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/http_server.iml" filepath="$PROJECT_DIR$/http_server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-provider/http_server-service-provider.iml" filepath="$PROJECT_DIR$/service-provider/http_server-service-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-start/http_server-web-start.iml" filepath="$PROJECT_DIR$/web-start/http_server-web-start.iml" />
+    </modules>
+  </component>
+</project>

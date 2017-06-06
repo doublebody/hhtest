@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yunjiacloud.nj.httpserver.dao.ProductDao">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.yunjiacloud.nj.httpserver.domain.ProductDo">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="code" property="code"/>
+        <result column="net_region" property="netRegion"/>
+        <result column="ip" property="ip"/>
+        <result column="port" property="port"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="product_status" property="productStatus"/>
+        <result column="is_start_audit" property="isStartAudit"/>
+        <result column="start_audit_time" property="startAuditTime"/>
+        <result column="is_start_monitor" property="isStartMonitor"/>
+        <result column="start_monitor_time" property="startMonitorTime"/>
+        <result column="gmt_create" property="gmtCreate"/>
+        <result column="gmt_modified" property="gmtModified"/>
+        <result column="create_user_id" property="createUserId"/>
+        <result column="update_user_id" property="updateUserId"/>
+    </resultMap>
+
+    <resultMap id="AllColumnDto" type="com.yunjiacloud.nj.httpserver.dto.ProductChanelDto">
+        <result column="id" property="id"/>
+        <result column="code" property="code"/>
+        <result column="name" property="name"/>
+        <result column="ip" property="ip"/>
+        <result column="port" property="port"/>
+        <result column="protocol" property="protocol"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `id`,
+        `name`,
+        `code`,
+        `net_region`,
+        `ip`,
+        `port`,
+        `username`,
+        `password`,
+        `product_status`,
+        `is_start_audit`,
+        `start_audit_time`,
+        `is_start_monitor`,
+        `start_monitor_time`,
+        `gmt_create`,
+        `gmt_modified`,
+        `create_user_id`,
+        `update_user_id`
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO product (
+            `id`,
+            `name`,
+            `code`,
+            `net_region`,
+            `ip`,
+            `port`,
+            `username`,
+            `password`,
+            `product_status`,
+            `is_start_audit`,
+            `start_audit_time`,
+            `is_start_monitor`,
+            `start_monitor_time`,
+            `gmt_create`,
+            `gmt_modified`,
+            `create_user_id`,
+            `update_user_id`
+        ) VALUES (
+            #{pojo.id},
+            #{pojo.name},
+            #{pojo.code},
+            #{pojo.netRegion},
+            #{pojo.ip},
+            #{pojo.port},
+            #{pojo.username},
+            #{pojo.password},
+            #{pojo.productStatus},
+            #{pojo.isStartAudit},
+            #{pojo.startAuditTime},
+            #{pojo.isStartMonitor},
+            #{pojo.startMonitorTime},
+            #{pojo.gmtCreate},
+            #{pojo.gmtModified},
+            #{pojo.createUserId},
+            #{pojo.updateUserId}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="pojo.id">
+        INSERT INTO product
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id!=null"> `id`,</if>
+            <if test="pojo.name!=null"> `name`,</if>
+            <if test="pojo.code!=null"> `code`,</if>
+            <if test="pojo.netRegion!=null"> `net_region`,</if>
+            <if test="pojo.ip!=null"> `ip`,</if>
+            <if test="pojo.port!=null"> `port`,</if>
+            <if test="pojo.username!=null"> `username`,</if>
+            <if test="pojo.password!=null"> `password`,</if>
+            <if test="pojo.productStatus!=null"> `product_status`,</if>
+            <if test="pojo.isStartAudit!=null"> `is_start_audit`,</if>
+            <if test="pojo.startAuditTime!=null"> `start_audit_time`,</if>
+            <if test="pojo.isStartMonitor!=null"> `is_start_monitor`,</if>
+            <if test="pojo.startMonitorTime!=null"> `start_monitor_time`,</if>
+            <if test="pojo.gmtCreate!=null"> `gmt_create`,</if>
+            <if test="pojo.gmtModified!=null"> `gmt_modified`,</if>
+            <if test="pojo.createUserId!=null"> `create_user_id`,</if>
+            <if test="pojo.updateUserId!=null"> `update_user_id`,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id!=null">#{pojo.id},</if>
+            <if test="pojo.name!=null">#{pojo.name},</if>
+            <if test="pojo.code!=null">#{pojo.code},</if>
+            <if test="pojo.netRegion!=null">#{pojo.netRegion},</if>
+            <if test="pojo.ip!=null">#{pojo.ip},</if>
+            <if test="pojo.port!=null">#{pojo.port},</if>
+            <if test="pojo.username!=null">#{pojo.username},</if>
+            <if test="pojo.password!=null">#{pojo.password},</if>
+            <if test="pojo.productStatus!=null">#{pojo.productStatus},</if>
+            <if test="pojo.isStartAudit!=null">#{pojo.isStartAudit},</if>
+            <if test="pojo.startAuditTime!=null">#{pojo.startAuditTime},</if>
+            <if test="pojo.isStartMonitor!=null">#{pojo.isStartMonitor},</if>
+            <if test="pojo.startMonitorTime!=null">#{pojo.startMonitorTime},</if>
+            <if test="pojo.gmtCreate!=null">#{pojo.gmtCreate},</if>
+            <if test="pojo.gmtModified!=null">#{pojo.gmtModified},</if>
+            <if test="pojo.createUserId!=null">#{pojo.createUserId},</if>
+            <if test="pojo.updateUserId!=null">#{pojo.updateUserId},</if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO product (
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.id},
+            #{pojo.name},
+            #{pojo.code},
+            #{pojo.netRegion},
+            #{pojo.ip},
+            #{pojo.port},
+            #{pojo.username},
+            #{pojo.password},
+            #{pojo.productStatus},
+            #{pojo.isStartAudit},
+            #{pojo.startAuditTime},
+            #{pojo.isStartMonitor},
+            #{pojo.startMonitorTime},
+            #{pojo.gmtCreate},
+            #{pojo.gmtModified},
+            #{pojo.createUserId},
+            #{pojo.updateUserId}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE product
+        <set>
+            <if test="pojo.id != null"> `id` = #{pojo.id}, </if>
+            <if test="pojo.name != null"> `name` = #{pojo.name}, </if>
+            <if test="pojo.code != null"> `code` = #{pojo.code}, </if>
+            <if test="pojo.netRegion != null"> `net_region` = #{pojo.netRegion}, </if>
+            <if test="pojo.ip != null"> `ip` = #{pojo.ip}, </if>
+            <if test="pojo.port != null"> `port` = #{pojo.port}, </if>
+            <if test="pojo.username != null"> `username` = #{pojo.username}, </if>
+            <if test="pojo.password != null"> `password` = #{pojo.password}, </if>
+            <if test="pojo.productStatus != null"> `product_status` = #{pojo.productStatus}, </if>
+            <if test="pojo.isStartAudit != null"> `is_start_audit` = #{pojo.isStartAudit}, </if>
+            <if test="pojo.startAuditTime != null"> `start_audit_time` = #{pojo.startAuditTime}, </if>
+            <if test="pojo.isStartMonitor != null"> `is_start_monitor` = #{pojo.isStartMonitor}, </if>
+            <if test="pojo.startMonitorTime != null"> `start_monitor_time` = #{pojo.startMonitorTime}, </if>
+            <if test="pojo.gmtCreate != null"> `gmt_create` = #{pojo.gmtCreate}, </if>
+            <if test="pojo.gmtModified != null"> `gmt_modified` = #{pojo.gmtModified}, </if>
+            <if test="pojo.createUserId != null"> `create_user_id` = #{pojo.createUserId}, </if>
+            <if test="pojo.updateUserId != null"> `update_user_id` = #{pojo.updateUserId} </if>
+        </set>
+        WHERE `id` = #{pojo.id}
+    </update>
+
+    <select id="findBySysCode" resultMap="AllColumnDto">
+        SELECT
+            a.id,
+            a.`code`,
+            a.`name`,
+            a.ip,
+            b.`port`,
+            b.protocol
+        FROM
+            product a
+        INNER JOIN http_channel b ON a.id = b.product_id
+        WHERE
+            a.`code` = #{code}
+    </select>
+</mapper>
+
